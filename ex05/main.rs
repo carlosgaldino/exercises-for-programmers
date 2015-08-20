@@ -1,4 +1,5 @@
 use std::io;
+use std::process;
 
 fn main() {
     let mut stdin = io::stdin();
@@ -6,12 +7,23 @@ fn main() {
 
     println!("What is the first number?");
     stdin.read_line(&mut buffer).unwrap();
+    let first = match buffer.lines().nth(0).unwrap().parse::<f64>() {
+        Ok(x) => x,
+        Err(_) => {
+            println!("You must enter a number.");
+            process::exit(1);
+        }
+    };
 
     println!("What is the second number?");
     stdin.read_line(&mut buffer).unwrap();
-
-    let first  = buffer.lines().nth(0).unwrap().parse::<i64>().unwrap();
-    let second = buffer.lines().nth(1).unwrap().parse::<i64>().unwrap();
+    let second = match buffer.lines().nth(1).unwrap().parse::<f64>() {
+        Ok(x) => x,
+        Err(_) => {
+            println!("You must enter a number.");
+            process::exit(1);
+        }
+    };
 
     println!("{} + {} = {}", first, second, first + second);
     println!("{} - {} = {}", first, second, first - second);
