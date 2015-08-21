@@ -10,7 +10,7 @@ fn main() {
     println!("Who said it?");
     stdin.read_line(&mut buffer).unwrap();
 
-    let output = buffer.lines().last().unwrap().to_string() + " says, " + "\"" + buffer.lines().nth(0).unwrap() + "\"";
+    let output = buffer.lines().last().unwrap().to_string() + " says, \"" + buffer.lines().nth(0).unwrap() + "\"";
 
     println!("{}", output);
 }
