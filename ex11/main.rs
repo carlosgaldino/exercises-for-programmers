@@ -26,5 +26,5 @@ fn main() {
         }
     };
 
-    println!("{} euros at an exchange rate of {} is\n{:.2} USD", amount, rate, amount * rate / 100.00);
+    println!("{:.2} euros at an exchange rate of {:.2} is\n{:.2} USD", amount, rate, amount * rate);
 }
