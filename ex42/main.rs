@@ -1,7 +1,6 @@
 use std::io::prelude::*;
 use std::fs::File;
 
-#[derive(Debug)]
 struct Person {
     first_name: String,
     last_name:  String,
