@@ -10,8 +10,8 @@ start() ->
                                            0 -> {true, Y};
                                            _ -> false
                                        end;
-                                   {error, Reason} ->
-                                       io:format("~p~n", [Reason])
+                                   _ ->
+                                       false
                                end
                        end,
                        Input),
